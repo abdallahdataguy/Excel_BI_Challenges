@@ -13,11 +13,10 @@ def extract_valid_times(col):
                      if int(x.split(':')[0]) < 24 and int(x.split(':')[1]) < 60]
     return ', '.join(valid_times)
 
-# Create a new column containing valid times extracted from a string 
-# of values using a user defined function developed above
+# Create a new column using a user defined function above
 df['My Answer'] = df['String'].apply(extract_valid_times)
 
-# Replace empty string values with nan values
+# Replace empty string values by na values
 df['My Answer'] = df['My Answer'].replace('', float('nan'))
 
 print(df)
