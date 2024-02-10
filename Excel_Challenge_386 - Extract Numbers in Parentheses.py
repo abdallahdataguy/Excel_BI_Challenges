@@ -2,7 +2,7 @@ import re
 import pandas as pd
 
 # Specify a file name
-file_name = r'C:\Users\aally\Downloads\Excel_Challenge_386 - Extract Numbers in Parentheses.xlsx'
+file_name = 'Excel_Challenge_386 - Extract Numbers in Parentheses.xlsx'
 
 # Read the file
 df = pd.read_excel(file_name)
