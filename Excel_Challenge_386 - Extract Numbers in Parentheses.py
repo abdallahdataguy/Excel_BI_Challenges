@@ -1,3 +1,5 @@
+# Link to the challenge: https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7160844652193984512-GlNM
+
 import re
 import pandas as pd
 
