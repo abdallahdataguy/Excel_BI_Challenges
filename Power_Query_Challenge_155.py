@@ -1,4 +1,5 @@
-# Link to the challenge: https://www.linkedin.com/feed/update/urn:li:activity:7161931798501867520/
+# Link to the challenge
+# https://www.linkedin.com/feed/update/urn:li:activity:7161931798501867520/
 
 import pandas as pd
 import re
