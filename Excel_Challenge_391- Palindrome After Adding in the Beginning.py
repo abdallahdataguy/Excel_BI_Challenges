@@ -1,8 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[60]:
-
+# Link to the challenge
+# https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7163381340954845185-UHGU/
 
 import pandas as pd
 
@@ -26,10 +23,3 @@ def make_palindrome(col):
 df['My Answer'] = df['String'].apply(make_palindrome)
     
 print(df)
-
-
-# In[ ]:
-
-
-
-
