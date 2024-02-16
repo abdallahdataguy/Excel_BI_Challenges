@@ -10,8 +10,7 @@ df = pd.read_excel(file_path, usecols='a:b')
 # Create a function to generate the required output
 def collect_letters(col):
     values = list(reversed(col))
-    even, odd = values[1::2], values[::2] # unpacking
-    return "".join(even + odd)
+    return "".join(values[1::2] + values[::2])
 
 # Add new column using the above function
 # and print the results
