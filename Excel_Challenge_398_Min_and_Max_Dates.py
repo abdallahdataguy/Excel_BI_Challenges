@@ -14,15 +14,14 @@ df2['Year'] = df2['Date'].dt.year
 df2['Month'] = df2['Date'].dt.month
 
 # Group by year and month, and calculate min and max dates
-df2 = df2.groupby(['Year', 'Month']).agg({'Date': ['min', 'max']})
+df2 = df2.groupby(['Year', 'Month'])['Date'].agg(['min', 'max'])
 
-# Flatten MultiIndex columns
-df2.columns = ['_'.join(col) for col in df2.columns]
-df2.rename(columns={'Date_min': 'Min Date', 'Date_max': 'Max Date'}, inplace=True)
+# Rename columns
+df2.rename(columns={'min': 'Min Date', 'max': 'Max Date'}, inplace=True)
 
 # Reset index to make 'Year' and 'Month' columns
 df2.reset_index(inplace=True)
 
-# Print the first five records
+# Display the first five records
 print(f'\nAnswer Expected: \n{df1.head()}')
 print(f'\nMy Answer: \n{df2.head()}')
