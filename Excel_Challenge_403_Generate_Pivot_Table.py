@@ -4,7 +4,7 @@
 import pandas as pd
 
 # Read the Excel file
-file_path = r'C:\Users\aally\Downloads\Excel_Challenge_403 - Generate Pivot Table.xlsx'
+file_path = 'Excel_Challenge_403 - Generate Pivot Table.xlsx'
 df1 = pd.read_excel(file_path, usecols='A:B', index_col=0)
 df2 = pd.read_excel(file_path, usecols='D:F', skiprows=1).dropna()
 df2['% of Value'] = df2['% of Value'].map(lambda x: f"{int(round(x * 100))}%")
