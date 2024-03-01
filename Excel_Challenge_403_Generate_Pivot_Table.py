@@ -11,8 +11,8 @@ df2['% of Value'] = df2['% of Value'].map(lambda x: f"{int(round(x * 100))}%")
 df2['Sum of Value'] = df2['Sum of Value'].astype(int)
 
 # Create a dataset of grouped values
-base, interval = 1990, 5
 # Create Sum of Values column
+base, interval = 1990, 5
 df1 = df1.groupby((df1.index - base) // interval * interval)[['Value']].sum()
 
 # Create a percent of vlaues column and format the values to include 
