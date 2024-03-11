@@ -7,7 +7,7 @@ import pandas as pd
 file_path = 'Excel_Challenge_409 - Table_Regular.xlsx'
 df = pd.read_excel(file_path, usecols='A:E').dropna(subset=['Date'])
 # fill down the missing values (forward fill - ffill)
-df.ffill(inplace=True) #new in pandas 2
+df.ffill(inplace=True) # new in pandas 2
 
 # Create columns by splitting variable 'Items' and add columns to original df
 df = pd.concat([df, df['Items'].str.split(', ', expand=True)], axis=1)
@@ -23,7 +23,7 @@ df = pd.melt(df, id_vars=keep_columns, var_name='Variable', value_name='Items') 
 # Cleaning the dataframe
 df.sort_values(by=['Ordering', 'Variable'], inplace=True)
 df = df.loc[:, ['Categories', 'Date', 'Items', 'Companies', 'Note']]
-df.dropna(subset=['Items'], inplace=True, ignore_index=True)
+df.dropna(subset=['Items'], inplace=True, ignore_index=True) # ignore_index new in pandas 2
 
 # Print the dataframe
 print(df)
