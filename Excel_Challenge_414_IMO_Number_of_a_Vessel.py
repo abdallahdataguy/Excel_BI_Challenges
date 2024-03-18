@@ -24,5 +24,4 @@ def complete_imo_number(number):
 df['My Answer'] = df['IMO Number'].apply(complete_imo_number)
 
 # Print the output. The question has many results more than the listed
-print(df)
-
+print(f'\n{df}')
