@@ -10,7 +10,7 @@ df = pd.read_excel(file_path, usecols='A:B')
 # Create a function to generate the required results
 def complete_imo_number(number):
     values = []
-    sequence = range(7,1,-1)
+    sequence = range(7, 1, -1)
     for i in range(10):
         new_number = number.replace('X', str(i))
         total = 0
