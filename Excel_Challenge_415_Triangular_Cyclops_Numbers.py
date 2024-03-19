@@ -1,7 +1,6 @@
 # Link to the challenge
 # https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7175702542939549697-smzf/
 
-
 import pandas as pd
 from math import sqrt
 
