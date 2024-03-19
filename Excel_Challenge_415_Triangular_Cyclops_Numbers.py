@@ -33,5 +33,5 @@ def triangular_cyclops(n):
 
 df['My Answer'] = pd.Series(triangular_cyclops(100))
 
-print(f'\n{df.head()}\n{df.tail()})
+print(f'\n{df.head()}\n\n{df.tail()})
 
