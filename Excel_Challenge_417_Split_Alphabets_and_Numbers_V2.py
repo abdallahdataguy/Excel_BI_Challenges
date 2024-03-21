@@ -4,7 +4,7 @@
 import pandas as pd
 
 # Read the Excel file
-file_path = r'C:\Users\aally\Downloads\Excel_Challenge_417 - Split Alphabets and Numbers.xlsx'
+file_path = 'Excel_Challenge_417 - Split Alphabets and Numbers.xlsx'
 df = pd.read_excel(file_path)
 
 # Create a function that generates the required results
