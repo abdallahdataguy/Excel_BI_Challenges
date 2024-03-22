@@ -14,7 +14,8 @@ df2 = df2.groupby(['Date', 'Emp ID'])['Time'].agg(['min', 'max']).reset_index()
 
 # Unpivot the aggregate columns min max columns
 df2 = pd.melt(df2, id_vars=['Date', 'Emp ID'], value_vars=['min', 'max'], value_name='Min & Max Time')
-df2.sort_values(by=['Date', 'Emp ID', 'variable'], ascending=[True, True, False], inplace=True)
+df2.sort_values(by=['Date', 'Emp ID', 'variable'], 
+                ascending=[True, True, False], ignore_index=True, inplace=True)
 df2 = df2[['Date', 'Emp ID', 'Min & Max Time']]
 
 # Print the output
