@@ -17,10 +17,7 @@ def resistor_value(dataframe, col):
             if dataframe.iat[j, 0] == values[i]:
                 values[i] = dataframe.iat[j, 1]
     values = ''.join(values)
-    if values[-1] == '0':
-        return values[: -1]
-    else:
-        return values[: -1] + '0' * int(values[-1])
+    return values[: -1] + '0' * int(values[-1])
 
 # Add the results column to the dataset and print the output
 df2['My Answer'] = df2.apply(lambda x: resistor_value(df, x['Color Bands']), axis=1)
