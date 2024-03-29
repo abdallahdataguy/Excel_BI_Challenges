@@ -21,7 +21,6 @@ def split_case(text):
         else:
             chars += text[i] + ', '
     return chars + text[-1]
-pd.set_option('display.max_columns', 5)
 
 # Add the results column and print the uotput
 df['My Answer'] = df['Data'].apply(split_case)
