@@ -3,7 +3,6 @@
 
 import pandas as pd
 
-# Read the Excel file
 file_path = 'Excel_Challenge_422 - Leap Years in Julian and Gregorian.xlsx'
 df = pd.read_excel(file_path)
 
