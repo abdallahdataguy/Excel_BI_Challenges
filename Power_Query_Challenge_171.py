@@ -8,7 +8,7 @@ file_path = 'PQ_Challenge_171.xlsx'
 df = pd.read_excel(file_path, nrows=6, usecols='A:F')
 
 # Transform and clean data
-columns = int(df.shape[1] / 2)
+columns = df.shape[1] // 2
 values = {'Col1': [], 'Col2': []}
 for row in df.iterrows():
     values['Col1'].extend(row[1].values[: columns])
