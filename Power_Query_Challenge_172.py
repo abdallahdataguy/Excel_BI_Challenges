@@ -8,7 +8,6 @@ file_path = 'PQ_Challenge_172.xlsx'
 df = pd.read_excel(file_path, usecols='A:F')
 
 # Data transformation and cleansing
-df.iloc[:, 2 : 4].fillna('0', inplace=True)
 df.iloc[:, 5].fillna('100', inplace=True)
 agents = set(df['Agent1'].dropna().unique()).union(set((df['Agent2'].dropna().unique())))
 agents_dict = {key: 0 for key in sorted(list(agents))}
