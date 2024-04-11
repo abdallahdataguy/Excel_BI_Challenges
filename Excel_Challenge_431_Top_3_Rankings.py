@@ -14,7 +14,6 @@ for col in df.columns[1: ]:
 items = {}
 for rank in range(1, 4):
     ranks = []
-    items[rank] = []
     for row in df.loc[:, :'2024'].iterrows():
         ranks.append(sum([x for x in row[1] if x == rank]))
     df[rank] = pd.Series(ranks)
