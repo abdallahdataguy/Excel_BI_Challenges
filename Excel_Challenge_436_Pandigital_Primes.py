@@ -24,5 +24,5 @@ file_path = 'Excel_Challenge_436 - Pandigital Primes.xlsx'
 df = pd.read_excel(file_path)
 df['My Answer'] = pd.Series(prime_pandigital(100))
 
-# Print the sample output
+# Print the output
 print(f'Required Results:\n{df}')
