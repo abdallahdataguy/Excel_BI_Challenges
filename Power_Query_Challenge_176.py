@@ -19,8 +19,8 @@ for i in df.index:
         except: ''
         values.append([x, y[j], total]) 
 
-df = pd.DataFrame(values)
-df.columns = ['Group', 'Column1', 'Column2']
+names = df.columns
+df = pd.DataFrame(values, columns=names)
 
 # Print the output
 print(f'\nFinal results:\n\n{df}')
