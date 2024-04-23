@@ -7,6 +7,7 @@ import pandas as pd
 file_path = 'Excel_Challenge_440 - List of Numbers Expressed as Sum of Two Squares.xlsx'
 df = pd.read_excel(file_path)
 
+# Perform data transformation and cleansing
 def sum_of_two_squares(start, end):
     values =  []
     for i in range(1, end + 1):
@@ -18,5 +19,5 @@ def sum_of_two_squares(start, end):
 
 df['My Answer'] = pd.Series(sum_of_two_squares(1, 100))
 
-# print the output
+# Print the output
 print(df)
