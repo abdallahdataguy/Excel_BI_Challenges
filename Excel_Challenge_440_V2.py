@@ -15,7 +15,7 @@ def sum_of_two_squares(start, end):
             total = i ** 2 + j ** 2
             if start <= total <= end:
                 values.append(total)
-    return sorted(list(set(values)))
+    return sorted(set(values))
 
 df['My Answer'] = pd.Series(sum_of_two_squares(1, 100))
 
