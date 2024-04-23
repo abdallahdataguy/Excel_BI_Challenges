@@ -16,7 +16,7 @@ def sum_of_two_squares(start, end):
                 values.append(total)
     return sorted(list(set(values)))
 
-df['My Answer'] = pd.Series(sum_of_two_squares(5, 100))
+df['My Answer'] = pd.Series(sum_of_two_squares(1, 100))
 
 # print the output
 print(df)
