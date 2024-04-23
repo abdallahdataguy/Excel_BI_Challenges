@@ -16,7 +16,7 @@ def sum_of_two_squares(start, end):
             for k in [n for n in squares if n != j]:
                 if j + k == i:
                     values += 1
-        if values >= 2:
+        if values > 1:
             numbers.append(i)
     return numbers
     
