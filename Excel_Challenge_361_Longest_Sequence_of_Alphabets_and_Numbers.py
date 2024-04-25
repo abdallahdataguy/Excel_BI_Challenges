@@ -15,7 +15,7 @@ def longest_sequence_num_alph(col):
     chars = re.findall(r'([a-zA-Z]*)', col)    
     nums= re.findall(r'(\d*)', col)
     alphabets  = ', '.join([x for x in chars if len(x) == max([len(y) for y in chars]) and x != ''])
-    numbers  = ', '.join([x.strip() for x in nums if len(x) == max([len(y) for y in nums]) and x != ''])
+    numbers  = ', '.join([x for x in nums if len(x) == max([len(y) for y in nums]) and x != ''])
     return alphabets, numbers
 
 df[['My Alphabets', 'My Numbers']] = df['String'].apply(longest_sequence_num_alph).tolist()
