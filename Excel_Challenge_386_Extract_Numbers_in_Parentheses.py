@@ -11,11 +11,11 @@ file_name = 'Excel_Challenge_386 - Extract Numbers in Parentheses.xlsx'
 df = pd.read_excel(file_name)
 
 # Create a function to extract the numbers in parentheses given a string
-def answer(col):
+def extract_numbers(col):
     return ", ".join(re.findall(r'\((\d+)\)', col))
     
 # Add a new colum 'My Answer' to the dataframe using the function above
-df['My Answer'] = df['String'].apply(answer)
+df['My Answer'] = df['String'].apply(extract_numbers)
 
 # Replace empty string values by na values
 df['My Answer'] = df['My Answer'].replace('', float('nan'))
