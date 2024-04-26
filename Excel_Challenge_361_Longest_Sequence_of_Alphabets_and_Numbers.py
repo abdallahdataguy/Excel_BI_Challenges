@@ -11,14 +11,14 @@ df.replace(float('nan'), '', inplace=True)
 df = df.astype(str)
 
 # Perform data transformation and cleansing
-def longest_sequence_num_alph(col):
+def longest_sequence(col):
     chars = re.findall(r'([a-zA-Z]*)', col)    
     nums= re.findall(r'(\d*)', col)
     alphabets  = ', '.join([x for x in chars if len(x) == max([len(y) for y in chars]) and x != ''])
     numbers  = ', '.join([x for x in nums if len(x) == max([len(y) for y in nums]) and x != ''])
     return alphabets, numbers
 
-df[['My Alphabets', 'My Numbers']] = df['String'].apply(longest_sequence_num_alph).tolist()
+df[['My Alphabets', 'My Numbers']] = df['String'].apply(longest_sequence).tolist()
 df['Correct'] = df.apply(
     lambda x: (x['Alphabets'] == x['My Alphabets']) & (x['Numbers'] == x['My Numbers']), axis=1)
 
