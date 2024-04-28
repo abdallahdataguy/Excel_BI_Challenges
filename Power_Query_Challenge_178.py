@@ -15,7 +15,7 @@ for i in df.index:
     values.append(list(df.iloc[i, [0, 3, 4]]))
     values[-1].insert(1, 'Org')
 
-df = pd.DataFrame(values, columns=['Emp', 'Change', 'Old', 'New']).dropna()
+df = pd.DataFrame(values, columns=['Emp', 'Change', 'Old', 'New']).dropna().reset_index(drop=True)
 
 # Print the output
 print(df)
