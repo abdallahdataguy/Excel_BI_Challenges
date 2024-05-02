@@ -12,7 +12,7 @@ values = [sorted([df.iat[i, 0], j]) + [df.at[i, j]]
           for i in df.index for j in df.columns[1: ] if df.at[i, j]]
 df = pd.DataFrame(values, columns=['From City', 'To City', 'Distance']).drop_duplicates()
 df.insert(0, 'Rank', df['Distance'].rank(method='dense').astype(int))
-df = df.sort_values(by=['Rank', 'From City'])
+df = df.sort_values(by=['Rank', 'From City'], ignore_index=True)
 df = df[df['Rank'] < 4]
 
 # Display the output
