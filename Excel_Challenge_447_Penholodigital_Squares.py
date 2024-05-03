@@ -10,7 +10,7 @@ df = pd.read_excel(file_path)
 # Perform data transformation and cleansing
 digits = [str(x) for x in range(1, 10)]
 interval = range(int(123456789 ** 0.5), int(987654321 ** 0.5) + 1)
-numbers = [c for x in interval if all(item in list(str(c := x ** 2)) for item in digits) and len(str(c)) == 9]
+numbers = [c for x in interval if all(item in list(str(c := x ** 2)) for item in digits)]
 df['My Answer'] = pd.Series(numbers)
 df['Check'] = df['Answer Expected'] == df['My Answer']
 
