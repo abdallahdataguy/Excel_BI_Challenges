@@ -8,7 +8,8 @@ file_path = 'Excel_Challenge_449 - Rotated Strings.xlsx'
 df = pd.read_excel(file_path, usecols='A:B')
 
 # Perform data transformation and cleansing
-strings = [x[1].values for x in df.iterrows() if (x[1][0] * 2).find(x[1][1]) > 0]
+strings = [x[1].values for x in df.iterrows() if (x[1][0] * 2).find(x[1][1]) > 0
+          and len(x[1][0]) == len(x[1][1])]
 df = pd.DataFrame(strings, columns=['MyString1', 'MyString2'])
 
 # Display the output
