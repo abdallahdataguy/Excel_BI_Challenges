@@ -11,8 +11,8 @@ df = pd.read_excel(file_path, usecols='A')
 df['serial'] = df.groupby((df['Numbers'] != df['Numbers'].shift(1)).cumsum()).cumcount() + 1
 max_pos = df['serial'][df['Numbers'] > 0].max()
 max_neg = df['serial'][df['Numbers'] < 0].max()
-pos_values = ', '.join([str(x) for x in df['Numbers'][(df['serial'] == max_pos) & (df['Numbers'] > 0)].unique()])
-neg_values = ', '.join([str(x) for x in df['Numbers'][(df['serial'] == max_neg) & (df['Numbers'] < 0)].unique()])
+pos_values = ', '.join([str(x) for x in df['Numbers'][df['serial'] == max_pos].unique() if x > 0])
+neg_values = ', '.join([str(x) for x in df['Numbers'][df['serial'] == max_neg].unique() if x < 0])
 
 # Create a final data frame
 ind = ['Max Consecutive Positive Number', 'Max Consecutive Negative Number']
