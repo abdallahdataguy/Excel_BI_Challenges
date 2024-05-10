@@ -1,3 +1,6 @@
+-- Link to the challenge
+-- https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7194548579913371648-kqVz/
+
 WITH CTE1 AS
 (
 SELECT List1, COUNT(*) Count1
