@@ -1,0 +1,20 @@
+WITH CTE1 AS
+(
+SELECT List1, COUNT(*) Count1
+FROM tblFruits
+GROUP BY List1
+),
+CTE2 AS
+(
+SELECT List2, COUNT(*) Count2
+FROM tblFruits
+GROUP BY List2
+),
+CTE3 AS
+(
+SELECT * 
+FROM CTE1 
+INNER JOIN CTE2 ON CTE1.List1 = CTE2.List2
+)
+SELECT List1 Match, LEAST(COUNT1, Count2) Count 
+FROM CTE3
