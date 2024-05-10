@@ -1,5 +1,5 @@
 # Link to the challenge
-# coding: utf-8
+# https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7194548579913371648-kqVz/
 
 import pandas as pd
 
