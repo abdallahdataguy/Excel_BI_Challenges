@@ -13,7 +13,7 @@ def count_extracted_numbers(col):
     s = col.lower().replace(' to ', '-').split(' ')
     for a in s:
         if a.find('-') == -1: numbers += 1
-        else: numbers += 1- eval(a)
+        else: numbers += 1 - eval(a)
     return numbers
 
 df['My Answer'] = df['Pronlem'].apply(count_extracted_numbers)
