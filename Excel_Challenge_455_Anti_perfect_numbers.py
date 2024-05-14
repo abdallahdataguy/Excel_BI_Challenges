@@ -10,12 +10,9 @@ df1 = pd.read_excel(file_path, usecols ='B', nrows=4)
 # Perform data transformation and cleansing
 def is_anti_perfect_number(number):
     total = 0
-    for i in range(2, int(number ** 0.5) + 1):
+    for i in range(2, int(number ** 0.5)):
         if number % i == 0:
-            if i == number / i:
-                total += int(str(i)[::-1])
-            else:
-                total += (int(str(i)[::-1]) + int(str(number // i)[::-1]))
+            total += (int(str(i)[::-1]) + int(str(number // i)[::-1]))
     return number == total + 1
 
 df['My Answer'] = df['Numbers'][df['Numbers'].apply(is_anti_perfect_number)]
