@@ -7,6 +7,7 @@ import pandas as pd
 file_path = 'Excel_Challenge_455 - Anti perfect numbers.xlsx'
 df = pd.read_excel(file_path, usecols ='A')
 df1 = pd.read_excel(file_path, usecols ='B', nrows=4)
+
 # Perform data transformation and cleansing
 def is_anti_perfect_number(number):
     total = 0
