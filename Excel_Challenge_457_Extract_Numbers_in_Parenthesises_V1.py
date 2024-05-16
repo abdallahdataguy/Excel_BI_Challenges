@@ -1,5 +1,6 @@
 # Link to the challenge
 # https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7196721087445946368-KeCD/
+# Works with any pair of parentheses (), [], {}, (], (} etc
 
 import pandas as pd
 import re
