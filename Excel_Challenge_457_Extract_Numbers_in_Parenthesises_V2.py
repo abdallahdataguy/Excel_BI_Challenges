@@ -11,7 +11,7 @@ df = pd.read_excel(file_path).astype(str).replace('nan', '')
 
 # Perform data transformation and cleansing
 pattern = '\[(\d+)\]|\{(\d+)\}|\((\d+)\)'
-df['My Answer'] = df['String'].apply(lambda x: ', '.join([''.join(a) for a in re.findall(pattern, x)]))
+df['My Answer'] = df['String'].apply(lambda x: ', '.join([max(a) for a in re.findall(pattern, x)]))
 df['Check'] = df['Answer Expected'] == df['My Answer']
 
 # Display Results
