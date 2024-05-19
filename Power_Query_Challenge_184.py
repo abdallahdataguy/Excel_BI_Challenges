@@ -17,7 +17,7 @@ df['Alphabets'] = df.iloc[:, 1].map(extract_alphabets)
 df = df.groupby('Set').agg(
     Text = ('Alphabets', lambda x: '-'.join(x[x != ''])),
     Original_Count = ('Set', 'count'),
-    New_Count = ('Alphabets', lambda x: x[x != ''].count())
+    New_Count = ('Alphabets', lambda x: x[x != ''].count()) # also => lambda x: (x != '').sum()
     ).reset_index()
 df = df.rename(columns={'Original_Count': 'Original Count',
                        'New_Count': 'New Count'})
