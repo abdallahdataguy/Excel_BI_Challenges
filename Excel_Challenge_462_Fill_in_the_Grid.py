@@ -18,7 +18,7 @@ def custom_fillna(df):
     for i in df.index:
         for j in range(len(df.columns)):
             if pd.isnull(df.iat[i, j]):
-                df.iat[i, j] = max([x.iat[i, j] for x in dfs])
+                df.iat[i, j] = max([x.iat[i, j] for x in dfs if pd.notnull(x.iat[i, j])])
     return df.astype(int)
 
 # Create a requred data frame          
