@@ -6,7 +6,6 @@ import pandas as pd
 # Read the Excel file
 file_path = 'Excel_Challenge_462 - Fill in the Grid.xlsx'
 dfo = pd.read_excel(file_path, skiprows=1, nrows=10, header=None) # Original df
-dff = pd.read_excel(file_path, skiprows=13, nrows=10, header=None) # Final df
 
 # Perform data wrangling
 # Create a function to generate the required results
