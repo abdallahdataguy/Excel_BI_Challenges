@@ -1,8 +1,7 @@
 -- Link to the challenge
 -- https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7199635229140004866-Mt0W/
 
--- I imported Excel BI's challenge data as  
--- a table named "Inventory" used in CTE3
+-- I imported Excel BI's challenge data as a table named "Inventory" used in CTE3
 
 WITH CTE1 AS (
 	SELECT 1 AS MonthNumber
