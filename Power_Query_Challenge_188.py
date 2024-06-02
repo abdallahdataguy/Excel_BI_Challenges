@@ -20,11 +20,10 @@ for i in df.index:
 
 df = pd.concat(dfs, ignore_index=True)
 df['Quarter'] = df['Date'].map(lambda x: f"Q{x.quarter}-{x.strftime('%y')}")
-df['Order'] = (df['Quarter'] != df['Quarter'].shift(1)).cumsum()
-df['QuarterCount'] = df.groupby('Order')['Order'].transform('count')
+df['QuarterCount'] = df.groupby(['Store', 'Quarter'])['Quarter'].transform('count')
 df['StoreCount'] = df.groupby('Store')['Store'].transform('count')
-df['NewAmount'] = df.apply(lambda x: round(x[2] * x[5] / x[6]), axis=1)
-df = df.iloc[:, [0, 3, 7]].drop_duplicates(ignore_index=True)
+df['NewAmount'] = df.apply(lambda x: round(x[2] * x[4] / x[5]), axis=1)
+df = df.iloc[:, [0, 3, 6]].drop_duplicates(ignore_index=True)
 df = df.rename(columns={'NewAmount': 'Amount'})
 
 # Display the final results
