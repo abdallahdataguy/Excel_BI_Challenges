@@ -14,7 +14,7 @@ for i in df.index:
     l = len(date_range)
     values = {'Store': [df.iat[i, 0]] * l,
               'Date': date_range,
-              'Amount': [df.iat[i, 3]] * l
+              'ThisAmount': [df.iat[i, 3]] * l
              }
     dfs.append(pd.DataFrame(values))
 
@@ -22,9 +22,8 @@ df = pd.concat(dfs, ignore_index=True)
 df['Quarter'] = df['Date'].map(lambda x: f"Q{x.quarter}-{x.strftime('%y')}")
 df['QuarterCount'] = df.groupby(['Store', 'Quarter'])['Quarter'].transform('count')
 df['StoreCount'] = df.groupby('Store')['Store'].transform('count')
-df['NewAmount'] = df.apply(lambda x: round(x[2] * x[4] / x[5]), axis=1)
+df['Amount'] = df.apply(lambda x: round(x[2] * x[4] / x[5]), axis=1)
 df = df.iloc[:, [0, 3, 6]].drop_duplicates(ignore_index=True)
-df = df.rename(columns={'NewAmount': 'Amount'})
 
 # Display the final results
 df
