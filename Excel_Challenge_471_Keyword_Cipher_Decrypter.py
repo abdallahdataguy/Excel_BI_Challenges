@@ -7,7 +7,7 @@ from string import ascii_lowercase
 # Create a function to generate the required results
 def decrypter(text1, text2):
     string1 = ascii_lowercase
-    string2 = ''.join(list(dict.fromkeys(text2 + ascii_lowercase)))
+    string2 = ''.join(list(dict.fromkeys(text2 + string1)))
     text = ''
     for char in text1:
         if char == ' ': text += ' '
