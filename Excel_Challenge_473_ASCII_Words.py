@@ -5,13 +5,12 @@ import pandas as pd
 
 # Create a function to generate the required output
 def ascii_words(word):
-    a = len(word)
-    b = '   ' + ''.join(['_   ' if char != ' ' else '  ' for char in word])[:-1] + '\n'
-    c = '  ' + ''.join(['/ \ ' if char !=' ' else '  ' for char in word]) + '\n'
-    d = ' ' + ''.join(['| ' + (char + ' ' if char != ' ' else '') for char in word]) + '|\n'
-    e = '  ' + ''.join(['\_/ ' if char !=' ' else '  ' for char in word]) 
+    a = '   ' + ''.join(['_   ' if char != ' ' else '  ' for char in word])[:-1] + '\n'
+    b = '  ' + ''.join(['/ \ ' if char !=' ' else '  ' for char in word]) + '\n'
+    c = ' ' + ''.join(['| ' + (char + ' ' if char != ' ' else '') for char in word]) + '|\n'
+    d = '  ' + ''.join(['\_/ ' if char !=' ' else '  ' for char in word]) 
 
-    return b + c + d + e
+    return a + b + c + d
 
 # Read the Excel file
 file_path = 'Excel_Challenge_473 - ASCII Words.xlsx'
