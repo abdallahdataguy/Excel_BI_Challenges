@@ -2,13 +2,12 @@
 # https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7206140862215499776-5Y00/
 
 import pandas as pd
-import numpy as np
 
 # Create a function to split the text
 def split_by_positions(text, pos):
-    positions = np.array([0] + [int(x) - 1 for x in str(pos).split(',')])
-    starts = np.array([int(x) - 1 for x in str(pos).split(',')] + [len(text)])
-    splits = [text[x[0]: x[0] + x[1]] for x in zip(positions, starts - positions)]
+    starts = [0] + [int(x) - 1 for x in str(pos).split(',')]
+    ends = starts[1 : ] + [len(text)]
+    splits = [text[x : y] for x, y in zip(starts, ends)]
     
     return splits
 
