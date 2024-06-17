@@ -5,14 +5,13 @@ import pandas as pd
 
 # Create a function to generate the required sequence of numbers
 def recaman_sequence(size):
-    numbers, n = [0], 1
-    while len(numbers) < size:
+    numbers = [0]
+    for n in range(1, size):
         num = numbers[-1]
         if num - n > 0 and num - n not in numbers:
             numbers.append(num - n)
         else:
             numbers.append(num + n)
-        n += 1
     return numbers
 
 # Read the Excel file
