@@ -5,8 +5,7 @@ import pandas as pd
 
 # Create a function to generate the required sequence of numbers
 def recaman_sequence(size):
-    numbers = [0]
-    n = 1
+    numbers, n = [0], 1
     while len(numbers) < size:
         num = numbers[-1]
         if num - n > 0 and num - n not in numbers:
