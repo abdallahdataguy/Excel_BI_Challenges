@@ -8,10 +8,7 @@ def decriptor(text, shift):
     decripted = ''
     for key, char in enumerate(text):
         num = ord(char) - (shift + key) % 26
-        num = (
-            num if char.isupper() == chr(num).isupper()
-            else ord(char) + 26 - (shift + key) % 26
-              )
+        num = num if char.isupper() == chr(num).isupper() else num + 26
         decripted += chr(num)
     return decripted
 
