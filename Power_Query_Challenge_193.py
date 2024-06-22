@@ -29,7 +29,7 @@ for key, person in enumerate(unique_persons):
     sales = df.loc[:, 'Q1':][sales_cond].sum().tolist()
     bonus = df.loc[:, 'Q1':][bonus_cond].sum().tolist()
     total = df.loc[:, 'Q1':][total_cond].sum().tolist()
-    values.extend([[', '.join(persons), 'Sales'] + sales, ['', 'Bonus'] + bonus,['', 'Total'] + total])
+    values.extend([[', '.join(persons), 'Sales'] + sales, ['', 'Bonus'] + bonus, ['', 'Total'] + total])
 
 df = pd.DataFrame(data=values, columns=df.columns)
     
