@@ -5,7 +5,7 @@ import pandas as pd
 
 # Create a function to generate the required results
 def max_freq(text):
-    max_occur = max([text.count(char) for char in set(text)])
+    max_occur = max([text.count(char) for char in text])
     popular = [char for char in text if text.count(char) == max_occur]
     unique = [char for i, char in enumerate(popular) 
               if popular[: i + 1].count(char) == 1]
