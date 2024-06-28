@@ -7,7 +7,7 @@ from itertools import combinations
 # Create a function to generate the required combinations
 def pairs(numbers, total):
     result = []
-    for i in range(2, len(numbers) + 1):
+    for i in range(1, len(numbers) + 1):
         for c in combinations(numbers, i):
             if sum(c) == total:
                 result.append(', '.join([str(x) for x in c]))
