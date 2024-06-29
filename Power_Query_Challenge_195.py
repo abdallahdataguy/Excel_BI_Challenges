@@ -24,7 +24,7 @@ df2['Count'] = df2.groupby('Items').transform('count')
 for col in df1.columns:
     df1[col] = df1[col].map(clean_split)
 
-df1 = df1.explode(column=['Items', 'Unit Price', 'Quantity'], ignore_index=True)
+df1 = df1.explode(column=list(df1.columns), ignore_index=True)
 df = df2.merge(df1)
 df[df.columns[2: ]] = df[df.columns[2: ]].astype(int)
 df['Amount Paid'] = df.apply(lambda x: x[3] * x[4] /x[2], axis=1).astype(int)
