@@ -4,7 +4,7 @@
 import pandas as pd
 
 # Read the Excel file
-file_path = 'Downloads\PQ_Challenge_196.xlsx'
+file_path = 'PQ_Challenge_196.xlsx'
 df = pd.read_excel(file_path, usecols='A:C')
 
 # Perform data wrangling
