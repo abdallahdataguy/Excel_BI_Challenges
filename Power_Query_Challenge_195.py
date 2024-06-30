@@ -6,7 +6,7 @@ import pandas as pd
 # Function to clean and split text into alphanumeric words
 def clean_split(text):
     for char in text:
-        if not char.isalpha() and not char.isdigit():
+        if not char.isalnum():
             text = text.replace(char, ' ')
     return text.split()
 
