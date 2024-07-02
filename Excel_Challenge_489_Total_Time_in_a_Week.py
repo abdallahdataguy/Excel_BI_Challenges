@@ -9,7 +9,7 @@ df = pd.read_excel(file_path, skiprows=1, usecols='A:H')
 
 # Perform data wrangling
 names = [x for y in df.iloc[:, 1:].values for x in y if not pd.isna(x)]
-names = [name for key, name in enumerate(names) if names[ : key + 1].count(name) == 1]
+names = [x for i, x in enumerate(names) if names[ : i + 1].count(x) == 1]
 
 items = []
 for name in names:
