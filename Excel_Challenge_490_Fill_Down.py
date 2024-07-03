@@ -13,7 +13,7 @@ df['Order'] = pd.notna(df['Level 1']).cumsum()
 values = []
 for i in df.index:
     order = df.iat[i, 3]
-    if i > 0 and df.iat[i, 3] != df.iat[i - 1, 3]:
+    if i > 0 and order != df.iat[i - 1, 3]:
         increment = 1
     if pd.isnull(df.iat[i, 1]) or pd.notnull(df.iat[i, 0]):
         values.append(f'{order}')
