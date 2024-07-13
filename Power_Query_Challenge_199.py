@@ -17,6 +17,7 @@ lambda x: re.findall(r'(\d+/\d+/\d+)', x.replace('//', '/'))
 )
 df = df.explode(column='Date')
 df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%y')
+df['Part No.'] = df['Part No.'].map(int)
 df = df.sort_values(by=['Part No.', 'Date'], ignore_index=True)
 df = df[['Part No.', 'Date']]
 
