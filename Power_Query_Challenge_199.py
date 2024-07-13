@@ -13,7 +13,7 @@ df['Part No.'] = df['String'].map(
 lambda x: re.findall(r' (\d+)(?!\/)', x)[0]
 )
 df['Date'] = df['String'].map(
-lambda x: re.findall(r'(\d+/\d+//?\d+)', x.replace('//', '/'))
+lambda x: re.findall(r'(\d+/\d+/\d+)', x.replace('//', '/'))
 )
 df = df.explode(column='Date')
 df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%y')
