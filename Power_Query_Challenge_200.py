@@ -9,9 +9,7 @@ df2 = xl("F1:I6", headers=True)
 
 # Perform data wrangling
 df = pd.concat([df1, df2])
-df = df.groupby('Student')[df.columns[1:]].max().reset_index()
-columns = [df.columns[0]] + sorted(df.columns[1:])
-df = df[columns]
+df = df.groupby('Student')[sorted(df.columns[1:])].max().reset_index()
 df = df.replace(np.nan, 0)
 df[df.columns[1:]] = df[df.columns[1:]].astype(int).replace(0, '')
 
