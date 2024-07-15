@@ -20,7 +20,7 @@ def is_lynch_bell_number(number):
     return cond1 and cond2
 
 # Generate the first 500 Lynch Bell Numbers 
-numbers = filter(lambda x: is_lynch_bell_number(x), count(10))   
+numbers = filter(is_lynch_bell_number, count(10))   
 numbers = list(islice(numbers, 500))
 
 # Display the required results
