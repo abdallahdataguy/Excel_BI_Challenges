@@ -1,7 +1,7 @@
 # Python in Excel
 
 # Link to the challenge
-# https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7217376417670430722-4VUX/
+# https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7218464316188946432-hBpp/
 
 # Create a function to generate Lynch Bell Numbers
 def generate_lynch_bell_numbers(size):
