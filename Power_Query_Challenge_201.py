@@ -11,9 +11,9 @@ df2 = xl("A10:C16", headers=True)
 
 # Perform data munging
 minimum = df1.iloc[:, 1:].values.min()
-maximun = df1.iloc[:, 1:].values.max()
+maximum = df1.iloc[:, 1:].values.max()
 df2.iloc[:, 1] = df2.iloc[:, 1].fillna(minimum)
-df2.iloc[:, 2] = df2.iloc[:, 2].fillna(maximun)
+df2.iloc[:, 2] = df2.iloc[:, 2].fillna(maximum)
 df1 = df1.set_index(keys='Buyer')
 df2 = df2.set_index(keys='Items')
 df = pd.DataFrame(data=list(df1.index), columns=['Buyer / Items'])
