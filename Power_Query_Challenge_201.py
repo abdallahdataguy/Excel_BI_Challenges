@@ -20,10 +20,10 @@ df = pd.DataFrame(data=list(df1.index), columns=['Buyer / Items'])
 for item in df2.index:
     df[item] = ''
 for item, buyer in product(df2.index, df1.index):
-        buy = pd.date_range(df1.at[buyer, 'Buy Date From'], df1.at[buyer, 'Buy Date To'])
-        stock = pd.date_range(df2.at[item, 'Stock Start Date'], df2.at[item, 'Stock Finish Date'])   
-        if any([x in stock for x in buy]):
-            df[item][df['Buyer / Items'] == buyer] = 'X'
+    buy = pd.date_range(df1.at[buyer, 'Buy Date From'], df1.at[buyer, 'Buy Date To'])
+    stock = pd.date_range(df2.at[item, 'Stock Start Date'], df2.at[item, 'Stock Finish Date'])   
+    if any([x in stock for x in buy]):
+        df[item][df['Buyer / Items'] == buyer] = 'X'
 
 # Display the final results       
 df
