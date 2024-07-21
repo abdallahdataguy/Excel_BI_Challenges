@@ -21,7 +21,6 @@ df['Level2'] = df['Level2'] * ((df['Name2'] != '') + (df['Name3'] != ''))
 df['Name1'] = name1
 df['Serial'] = df.apply(lambda x: '.'.join([y for y in x[3:] if y]), axis=1)
 df['Names'] = df.apply(lambda x: '.'.join([y for y in x[:3] if y]), axis=1)
-df = df[['Serial', 'Names']] # Final report as expected
-
+df = df[['Serial', 'Names']]
 # Display the final results.
 df
