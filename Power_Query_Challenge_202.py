@@ -22,5 +22,6 @@ df['Name1'] = name1
 df['Serial'] = df.apply(lambda x: '.'.join([y for y in x[3:] if y]), axis=1)
 df['Names'] = df.apply(lambda x: '.'.join([y for y in x[:3] if y]), axis=1)
 df = df[['Serial', 'Names']]
+
 # Display the final results.
 df
