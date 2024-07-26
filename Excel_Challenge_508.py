@@ -23,7 +23,7 @@ def generate_numbers(n):
         else:
             end_num *= 10
 
-# Generate the list of the first 500 numbers
+# Generate a list of the first 500 numbers
 numbers = generate_numbers(500)
 
 # Display the list
