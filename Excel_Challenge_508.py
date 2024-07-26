@@ -8,7 +8,7 @@ from math import isqrt, sqrt
 # create a function to identify the required numbers
 def is_perfect_sum_square(num):
     sum_digits_square = sum([int(x) ** 2 for x in str(num)])
-    cond = isqrt(sum_digits_square) == round(sqrt(sum_digits_square), 9)
+    cond = isqrt(sum_digits_square) == sqrt(sum_digits_square)
     return cond
 
 # Create a function to generate a list of the first
