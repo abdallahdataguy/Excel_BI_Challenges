@@ -9,11 +9,9 @@ import re
 def count_chars(text):
     if not text:
         return (0, 0, 0, 0)
-    upper_case = len(re.findall('[A-Z]', text))
-    lower_case = len(re.findall('[a-z]', text))
-    numbers = len(re.findall('\d', text))
-    special = len(re.findall('[_\W]', text))
-    return upper_case, lower_case, numbers, special
+    matches = re.findall(r'([A-Z])|([a-z])|(\d)|([_\W])', text)
+    counts = [len([x[i] for x in matches if x[i]]) for i in range(len(matches[0]))]
+    return counts
 
 # Read the data range
 df = xl("A2:A12", headers=True)
