@@ -5,15 +5,11 @@
 
 import pandas as pd
 
-# Create functions to generate required results
-def is_sparse_number(number):
-    return '11' not in bin(number)
-
 def min_sparse_after_number(number):
     start = number + 1
     while True:
         for num in range(start, start * 10):
-            if is_sparse_number(num):
+            if '11' not in bin(num):
                 return num
         start *= 10
 
