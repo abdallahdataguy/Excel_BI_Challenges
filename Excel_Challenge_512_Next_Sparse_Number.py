@@ -3,8 +3,7 @@
 # Link to the challenge
 # https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7224624946709200896-5QWi/
 
-import pandas as pd
-
+# Create a function to generate required results
 def min_sparse_after_number(number):
     start = number + 1
     while True:
