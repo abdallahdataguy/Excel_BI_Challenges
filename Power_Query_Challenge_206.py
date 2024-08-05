@@ -11,7 +11,7 @@ df = df.drop(index=[3, 10]).reset_index(drop=True)
 
 df = pd.concat(
     [
-        pd.DataFrame([[df.iat[i, 0], df.iat[i, 1]], [df.iat[i, 2], df.iat[i, 3]]]) 
+        pd.DataFrame([df.iloc[i, :2].tolist(), df.iloc[i, 2:].tolist()]) 
         for i in df.index
     ], ignore_index=True
 )
