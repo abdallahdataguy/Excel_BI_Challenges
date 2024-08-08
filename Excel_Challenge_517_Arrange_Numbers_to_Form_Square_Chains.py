@@ -3,7 +3,6 @@
 # Link to the challenge
 # https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7227161616620896257-cpK2/
 
-import pandas as pd
 from math import sqrt, isqrt
 
 # Read the data range
