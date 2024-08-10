@@ -15,7 +15,7 @@ for col in df.columns[1 : ]:
 df = pd.DataFrame(data=values, columns=['Day of Week', 'names'])
 df = pd.concat([df, df['names'].str.split(', ', expand=True)], axis=1)
 df.columns = [
-    'Week ' + str(x + 1) if str(x).isdigit() else x for x in df.columns
+    'Name' + str(x + 1) if str(x).isdigit() else x for x in df.columns
 ]
 df = df.drop(columns='names').fillna('')
 
