@@ -7,7 +7,7 @@
 df = xl("A1:I4", headers=True)
 
 # Perform data munging
-cols = df.columns[1:].tolist()
+cols = df.columns.tolist()
 half_cols = len(cols) // 2
 headers1 = cols[1: half_cols + 1]
 headers2 = cols[half_cols + 1: ]
