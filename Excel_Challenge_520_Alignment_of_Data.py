@@ -26,4 +26,3 @@ df = pd.DataFrame(values).fillna('')
 
 # Display the final results
 df
-s
