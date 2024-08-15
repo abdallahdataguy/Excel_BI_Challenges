@@ -10,7 +10,7 @@ dates = np.arange('1900-01-01', '3000-01-01', dtype='datetime64[D]')
 dates = filter(
     lambda x: 
     all(
-        [str(x).count(y) == 1 for y in str(x) if y != '-']
+        str(x).count(y) == 1 for y in str(x) if y != '-'
     ), dates
 )
 df = pd.DataFrame(data=dates, columns=['Dates'])
