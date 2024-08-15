@@ -4,7 +4,7 @@
 # https://www.linkedin.com/posts/excelbi_excel-challenge-problem-activity-7229335942967304192-v0FP/
 
 # Create a list of dates
-dates= np.arange('1900-01-01', '3000-01-01', dtype='datetime64[D]')
+dates = np.arange('1900-01-01', '3000-01-01', dtype='datetime64[D]')
 
 # Filter the dates with unique digits
 dates = filter(
