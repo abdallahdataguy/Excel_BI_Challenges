@@ -10,7 +10,7 @@ def get_odd_combinations(number):
         for j in range(len(odd_numbers) - i + 1):
             cons_odd_numbers = odd_numbers[j : j + i]
             if sum(cons_odd_numbers) == number:
-               return ', '.join([str(x) for x in cons_odd_numbers])
+               return ', '.join(str(x) for x in cons_odd_numbers)
     return 'NP'
 
 # Read the data range
