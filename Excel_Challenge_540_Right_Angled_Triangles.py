@@ -11,9 +11,7 @@ def get_perp_base(row):
     for comb in combinations(range(1, items[0]), 2):
         cond1 = 0.5 * comb[0] * comb[1] == items[1]
         cond2 = comb[0] ** 2 + comb[1] ** 2 == items[0] ** 2
-        cond3 = comb[0] == int(comb[0])
-        cond4 = comb[1] == int(comb[1])
-        if all([cond1, cond2, cond3, cond4]):
+        if cond1 and cond2:
             return comb
     return 'NP', 'NP'
 
